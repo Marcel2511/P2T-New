@@ -55,4 +55,7 @@ public class TransformerService {
       return "Unknown";
     }
   }
+
+  public void getWebClient() {
+  }
 }
