@@ -38,9 +38,9 @@ public class P2TLLMService {
    */
   public String callLLM(String body, OpenAiApiDTO openAiApiDTO) {
     String apiUrl = "https://api.openai.com/v1/chat/completions";
-    //Use the Transformer API if the provided processmodell is a PNML to parse it into an BPMN
+    // Use the Transformer API if the provided processmodell is a PNML to parse it into an BPMN
     TransformerService transformerService = new TransformerService();
-    if (transformerService.checkForBPMNorPNML(body).equals("PNML")){
+    if (transformerService.checkForBPMNorPNML(body).equals("PNML")) {
       body = transformerService.transform("pnmltobpmn", body);
     }
     RestTemplate restTemplate = new RestTemplate();
